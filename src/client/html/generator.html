@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Generator - OPay Jukebox</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.css" />
+  <link rel="stylesheet" href="/css/generator.css" />
+</head>
+<body>
+  <div id="app-root">
+    <section class="inputs">
+      <h4>URL Generator</h4>
+      <div class="input-group">
+        <div class="input-title">OPay ID</div>
+        <input id="opay-id" placeholder="ex: D9D0CEA6BA52E4CDEBB1EB48F6449A92" />
+      </div>
+      <div class="input-group">
+        <div class="input-title">NTD/min</div>
+        <input id="ntd-per-min" type="number" placeholder="30" />
+      </div>
+    </section>
+    <section class="result">
+      <h4>Paste this url to OBS</h4>
+      <div class="input-group">
+        <textarea id="result-textarea" readonly></textarea>
+      </div>
+    </section>
+  </div>
+  <script type="text/javascript" src="/js/generator.js" defer="defer"></script>
+</body>
+</html>

@@ -10,9 +10,11 @@
   "scripts": {
     "prettier": "prettier -l --write '**/*.js' '**/*.jsx' '**/*.json' --ignore-path .gitignore",
     "clean": "rimraf dist",
-    "build": "babel src -d dist",
+    "buildclient": "babel-node src/server/buildHtml.js",
+    "buildserver": "babel src/server -d dist/server",
+    "build": "yarn buildclient && yarn buildserver",
     "start": "yarn build && node dist/server",
-    "devstart": "babel-node --max_old_space_size=8192 src/server",
+    "devstart": "nodemon --exec 'babel-node src/server' -e js --watch src/server",
     "prePush": "sh prePush.sh",
     "test": "jest --coverage --config jest/jest.config.js"
   },
@@ -25,10 +27,13 @@
     "@babel/plugin-syntax-dynamic-import": "^7.2.0",
     "@babel/plugin-transform-spread": "^7.2.2",
     "@babel/polyfill": "^7.2.5",
-    "@babel/preset-env": "^7.3.4"
+    "@babel/preset-env": "^7.3.4",
+    "nodemon": "^1.18.10"
   },
   "dependencies": {
+    "@babel/node": "^7.2.2",
     "express": "^4.16.4",
-    "helmet": "^3.16.0"
+    "helmet": "^3.16.0",
+    "node-fetch": "^2.3.0"
   }
 }
