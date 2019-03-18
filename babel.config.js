@@ -6,15 +6,10 @@ const presets = [
       modules: 'commonjs',
     },
   ],
-  '@babel/react',
 ];
 
 const plugins = [
-  'lodash',
-  'react-hot-loader/babel',
   '@babel/plugin-syntax-dynamic-import',
-  'universal-import',
-  ['babel-plugin-styled-components', { ssr: true }],
   '@babel/plugin-proposal-object-rest-spread',
   '@babel/plugin-transform-spread',
   ['@babel/plugin-proposal-class-properties', { loose: true }],

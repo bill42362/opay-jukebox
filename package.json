@@ -6,5 +6,29 @@
   "repository": "https://github.com/bill42362/opay-jukebox",
   "author": "Hsiao Pi-Yin",
   "license": "MIT",
-  "private": false
+  "private": false,
+  "scripts": {
+    "prettier": "prettier -l --write '**/*.js' '**/*.jsx' '**/*.json' --ignore-path .gitignore",
+    "clean": "rimraf dist",
+    "build": "babel src -d dist",
+    "start": "yarn build && node dist/server",
+    "devstart": "babel-node --max_old_space_size=8192 src/server",
+    "prePush": "sh prePush.sh",
+    "test": "jest --coverage --config jest/jest.config.js"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.3.4",
+    "@babel/plugin-proposal-class-properties": "^7.3.4",
+    "@babel/plugin-proposal-object-rest-spread": "^7.3.4",
+    "@babel/plugin-proposal-optional-chaining": "^7.2.0",
+    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
+    "@babel/plugin-transform-spread": "^7.2.2",
+    "@babel/polyfill": "^7.2.5",
+    "@babel/preset-env": "^7.3.4"
+  },
+  "dependencies": {
+    "express": "^4.16.4",
+    "helmet": "^3.16.0"
+  }
 }
