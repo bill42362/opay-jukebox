@@ -1,0 +1,10 @@
+{
+  "name": "opay-jukebox",
+  "version": "1.0.0",
+  "description": "Jukebox for OPay.",
+  "main": "src",
+  "repository": "https://github.com/bill42362/opay-jukebox",
+  "author": "Hsiao Pi-Yin",
+  "license": "MIT",
+  "private": false
+}
