@@ -10,7 +10,9 @@
   "scripts": {
     "prettier": "prettier -l --write '**/*.js' '**/*.jsx' '**/*.json' --ignore-path .gitignore",
     "clean": "rimraf dist",
-    "build": "babel src -d dist",
+    "buildclient": "babel-node src/server/buildHtml.js",
+    "buildserver": "babel src/server -d dist/server",
+    "build": "yarn buildclient && yarn buildserver",
     "start": "yarn build && node dist/server",
     "devstart": "babel-node --max_old_space_size=8192 src/server",
     "prePush": "sh prePush.sh",
